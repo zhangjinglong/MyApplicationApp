@@ -6,21 +6,92 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import com.ivali.myapplicationapp.com.ivali.myapplicationapp.utils.DecriptTest;
 
 
 public class MainActivity extends ActionBarActivity {
 
+    private TextView resultTv,sha1result,sharesult;
+    private EditText et_input;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        resultTv= (TextView) findViewById(R.id.textView3);
+        sha1result= (TextView) findViewById(R.id.textView4);
+        sharesult= (TextView) findViewById(R.id.textView5);
+        et_input= (EditText) findViewById(R.id.editText);
     }
 
+    public void jiaMiForMD5(){
+        String  text=et_input.getText().toString().trim();
+        if (text.length()<1){
+            return;
+        }
+        String  result="";
+        try{
+            result= DecriptTest.MD5(text);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        if (result.length()==0){
+            return;
+        }else{
+            resultTv.setText(result);
+        }
+    }
+    public void jiaMiForSHA1(){
+        String  text=et_input.getText().toString().trim();
+        if (text.length()<1){
+            return;
+        }
+        String  result="";
+        try{
+            result= DecriptTest.SHA1(text);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        if (result.length()==0){
+            return;
+        }else{
+            sha1result.setText(result);
+        }
+    }
+    public void jiaMiForSHA(){
+        String  text=et_input.getText().toString().trim();
+        if (text.length()<1){
+            return;
+        }
+        String  result="";
+        try{
+            result= DecriptTest.SHA(text);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        if (result.length()==0){
+            return;
+        }else{
+            sharesult.setText(result);
+        }
+    }
     public  void onClick(View v){
         Intent intent=new Intent(MainActivity.this,Main.class);
         startActivity(intent);
     }
+    public  void  onMD5(View view){
+        jiaMiForMD5();
+    }
+    public  void  onSHA1(View view){
+        jiaMiForSHA1();
+    }
+    public  void  onSHA(View view){
+        jiaMiForSHA();
+    }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
