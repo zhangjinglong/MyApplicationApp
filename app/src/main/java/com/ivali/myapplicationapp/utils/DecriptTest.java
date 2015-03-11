@@ -1,4 +1,4 @@
-package com.ivali.myapplicationapp.com.ivali.myapplicationapp.utils;
+package com.ivali.myapplicationapp.utils;
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidKeyException;
 import java.security.MessageDigest;

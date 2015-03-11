@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.ivali.myapplicationapp.com.ivali.myapplicationapp.utils.DecriptTest;
+import com.ivali.myapplicationapp.utils.DecriptTest;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -89,6 +89,10 @@ public class MainActivity extends ActionBarActivity {
     }
     public  void  onSHA(View view){
         jiaMiForSHA();
+    }
+    public  void  onGetApps(View v){
+        Intent intent=new Intent(MainActivity.this,GetAppInfoActivity.class);
+        startActivity(intent);
     }
 
 
