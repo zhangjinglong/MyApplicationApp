@@ -27,6 +27,10 @@
             android:name=".GetAppInfoActivity"
             android:label="@string/title_activity_get_app_info" >
         </activity>
+        <activity
+            android:name=".DBShowActivity"
+            android:label="@string/title_activity_dbshow" >
+        </activity>
     </application>
 
 </manifest>

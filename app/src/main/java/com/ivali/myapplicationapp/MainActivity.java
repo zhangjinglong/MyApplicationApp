@@ -94,6 +94,10 @@ public class MainActivity extends ActionBarActivity {
         Intent intent=new Intent(MainActivity.this,GetAppInfoActivity.class);
         startActivity(intent);
     }
+    public  void  onShowDB(View v){
+        Intent intent=new Intent(MainActivity.this,DBShowActivity.class);
+        startActivity(intent);
+    }
 
 
 
